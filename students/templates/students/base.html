@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABRAT</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}"><i class="fa-solid fa-building-columns fa-lg fa-fw"></i> manajemen sistem siswa test</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}"><i class="fa-solid fa-list fa-lg fa-fw"></i> All Students</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'add' %}"><i class="fa-solid fa-plus fa-lg fa-fw"></i> Add Students</a>
+              </li>
+            </ul>
+            <ul class="nav nav-pills justify-content-end">
+              <li class="nav-item">
+                <a href="" class="link-underline-danger link-offset-3" data-bs-toggle="modal" data-bs-target="#logout">Logout</a>
+              </li>
+              <div class="modal" id="logout" tabindex="-1" aria-labelledby="myModalLabel3" data-bs-theme="light" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Logout</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Apakah anda yakin untuk logout?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+      <div class="container-fluid">
+        {% block body %}
+        {% endblock %}
+      </div>
+      <footer class="mt-auto mb-4">
+        <div class="text-center">
+          <span>
+            Copyright kontol &copy; <script>document.write(new Date().getFullYear())</script> lolololol
+          </span>
+        </div>
+      </footer>
+</body>
+</html>
